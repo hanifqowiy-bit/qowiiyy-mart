@@ -17,11 +17,13 @@ if(isset($_POST['update'])){
     $username = $_POST['username'];
     $email    = $_POST['email'];
     $alamat   = $_POST['alamat'];
+    $no_hp    = $_POST['no_hp']; // 🔥 Tambahan
 
     mysqli_query($koneksi, "UPDATE users SET 
         username='$username',
         email='$email',
-        alamat='$alamat'
+        alamat='$alamat',
+        no_hp='$no_hp'       -- 🔥 Tambahan
     WHERE id='$user_id'");
 }
 
@@ -76,6 +78,8 @@ body{
     border-radius:0 30px 30px 0;
     position:relative;
     box-shadow:0 0 15px rgba(0,0,0,0.15);
+
+    padding-bottom:90px; /* 🔥 Agar tombol kembali tidak nempel */
 }
 
 /* Tombol judul Profile */
@@ -238,6 +242,11 @@ textarea{
             <div class="form-group">
                 <label>Email</label>
                 <input type="text" name="email" value="<?php echo $data['email']; ?>">
+            </div>
+
+            <div class="form-group">
+                <label>Nomor HP</label> <!-- 🔥 Tambahan -->
+                <input type="text" name="no_hp" value="<?php echo $data['no_hp']; ?>">
             </div>
 
             <div class="form-group">

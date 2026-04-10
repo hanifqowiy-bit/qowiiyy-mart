@@ -146,6 +146,9 @@ a{
 
 <p>Belum punya akun? silahkan <a href="register.php">Daftar</a></p>
 
+<!-- TAMBAHAN TANPA MERUBAH APAPUN -->
+<p>atau masuk, <a href="home.php" style="color:#1e9be2;">TANPA AKUN</a></p>
+
 </div>
 
 </body>

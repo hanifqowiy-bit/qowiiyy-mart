@@ -24,246 +24,37 @@ if (isset($_GET['cari']) && $_GET['cari'] != "") {
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-}
-
-body{
-    display:flex;
-    background:#f4f6f9;
-}
-
-/* SIDEBAR */
-.sidebar{
-    width:220px;
-    background:#169bd5;
-    min-height:100vh;
-    padding:20px;
-    color:white;
-}
-
-.sidebar h2{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.sidebar a{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    padding:12px;
-    color:white;
-    text-decoration:none;
-    border-radius:5px;
-    margin-bottom:10px;
-    transition:0.2s;
-}
-
-.sidebar a:hover,
-.sidebar .active{
-    background:rgba(255,255,255,0.2);
-}
-
-/* CONTENT */
-.content{
-    flex:1;
-    padding:25px;
-}
-
-/* HEADER */
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
-}
-
-.header h2{
-    font-size:22px;
-}
-
-.header p{
-    font-size:14px;
-    color:#666;
-}
-
-/* PROFILE ICON */
-.profile{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:#169bd5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    cursor:pointer;
-    text-decoration:none;
-}
-
-/* SEARCH AREA */
-.search-area{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:20px;
-}
-
-/* BACK BUTTON */
-.back-btn{
-    padding:11px 15px;
-    background:#169bd5;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    display:none;
-    align-items:center;
-    gap:5px;
-    font-size:14px;
-    text-decoration:none;
-}
-
-.back-btn:hover{
-    background:#0f80b4;
-}
-
-/* SEARCH BOX */
-.search-box{
-    flex:1;
-}
-
-.search-box input{
-    width:100%;
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #bbb;
-    font-size:14px;
-}
-
-/* JUDUL PRODUK */
-.judul-produk{
-    font-size:20px;
-    margin-bottom:15px;
-    color:#333;
-    border-left:5px solid #169bd5;
-    padding-left:10px;
-}
-
-/* PRODUK GRID */
-.produk{
-    display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap:25px;
-}
-
-/* CARD PRODUK */
-.card{
-    background:white;
-    border-radius:12px;
-    padding:12px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    transition:all 0.3s ease;
-    cursor:pointer;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-}
-
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-.card h3{
-    font-size:15px;
-    margin:10px 0 5px;
-}
-
-.card p{
-    color:#169bd5;
-    font-weight:bold;
-    font-size:15px;
-}
-
-/* MODAL */
-#deskripsiModal{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
-    justify-content:center;
-    align-items:center;
-    z-index:999;
-}
-
-#deskripsiModal .modal-content{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    max-width:500px;
-    width:90%;
-    position:relative;
-}
-
-#deskripsiModal .close{
-    position:absolute;
-    top:10px;
-    right:15px;
-    cursor:pointer;
-    font-size:20px;
-}
-
-#modalNama{
-    margin-bottom:10px;
-}
-
-#modalHarga{
-    margin-top:15px;
-    font-weight:bold;
-    color:#169bd5;
-}
-.content{
-    flex:1;
-    padding:25px;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-}
-
-.produk{
-    display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap:25px;
-    margin-bottom:20px;
-}
-
-/* FOOTER */
-.footer{
-    margin-top:auto;
-    padding:15px;
-    text-align:center;
-    background:white;
-    border-radius:10px;
-    color:#666;
-    font-size:14px;
-    box-shadow:0 2px 8px rgba(14, 101, 216, 0.05);
-}
-
-.footer b{
-    color:#169bd5;
-}
+/* === STYLE LAMA === */
+*{margin:0;padding:0;box-sizing:border-box;font-family: Arial, sans-serif;}
+body{display:flex;background:#f4f6f9;}
+.sidebar{width:220px;background:#169bd5;min-height:100vh;padding:20px;color:white;}
+.sidebar h2{text-align:center;margin-bottom:30px;}
+.sidebar a{display:flex;align-items:center;gap:8px;padding:12px;color:white;text-decoration:none;border-radius:5px;margin-bottom:10px;transition:0.2s;}
+.sidebar a:hover,.sidebar .active{background:rgba(255,255,255,0.2);}
+.content{flex:1;padding:25px;min-height:100vh;display:flex;flex-direction:column;}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;}
+.header h2{font-size:22px;}
+.header p{font-size:14px;color:#666;}
+.profile{width:42px;height:42px;border-radius:50%;background:#169bd5;display:flex;align-items:center;justify-content:center;color:white;cursor:pointer;text-decoration:none;position:relative;}
+.search-area{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.back-btn{padding:11px 15px;background:#169bd5;color:white;border:none;border-radius:8px;cursor:pointer;display:none;align-items:center;gap:5px;font-size:14px;text-decoration:none;}
+.back-btn:hover{background:#0f80b4;}
+.search-box{flex:1;}
+.search-box input{width:100%;padding:12px;border-radius:8px;border:1px solid #bbb;font-size:14px;}
+.judul-produk{font-size:20px;margin-bottom:15px;color:#333;border-left:5px solid #169bd5;padding-left:10px;}
+.produk{display:grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));gap:25px;margin-bottom:20px;}
+.card{background:white;border-radius:12px;padding:12px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.08);transition:all 0.3s ease;cursor:pointer;}
+.card:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+.card img{width:100%;height:200px;object-fit:cover;border-radius:10px;}
+.card h3{font-size:15px;margin:10px 0 5px;}
+.card p{color:#169bd5;font-weight:bold;font-size:15px;}
+#deskripsiModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);justify-content:center;align-items:center;z-index:999;}
+#deskripsiModal .modal-content{background:white;padding:20px;border-radius:12px;max-width:500px;width:90%;position:relative;}
+#deskripsiModal .close{position:absolute;top:10px;right:15px;cursor:pointer;font-size:20px;}
+#modalNama{margin-bottom:10px;}
+#modalHarga{margin-top:15px;font-weight:bold;color:#169bd5;}
+.footer{margin-top:auto;padding:15px;text-align:center;background:white;border-radius:10px;color:#666;font-size:14px;box-shadow:0 2px 8px rgba(14,101,216,0.05);}
+.footer b{color:#169bd5;}
 </style>
 </head>
 
@@ -295,9 +86,15 @@ body{
             <p>Belanja mudah, cepat, dan terpercaya.</p>
         </div>
 
-        <a href="profile.php" class="profile">
-            <i data-lucide="user"></i>
-        </a>
+        <div style="display:flex; gap:15px; align-items:center; position:relative;">
+            <a href="chat_petugas_user.php" class="profile" title="Chat Petugas">
+                <i data-lucide="message-circle"></i>
+            </a>
+
+            <a href="profile.php" class="profile" title="Profile">
+                <i data-lucide="user"></i>
+            </a>
+        </div>
     </div>
 
     <!-- SEARCH + BACK BUTTON -->
@@ -334,20 +131,23 @@ body{
         <p>Rp <?php echo number_format($p['price']); ?></p>
     </div>
     <?php endwhile; ?>
-</div>
-
-<!-- MODAL -->
-<div id="deskripsiModal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3 id="modalNama"></h3>
-        <p id="modalDeskripsi"></p>
-        <p id="modalHarga"></p>
     </div>
-</div>
-<div class="footer">
-    <b>KOWI-MART</b><br>
-    &copy; 2026 KOWI-MART. All Rights Reserved.
+
+    <!-- MODAL -->
+    <div id="deskripsiModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalNama"></h3>
+            <p id="modalDeskripsi"></p>
+            <p id="modalHarga"></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <b>KOWI-MART</b><br>
+        &copy; 2026 KOWI-MART. All Rights Reserved.
+    </div>
+
 </div>
 
 <script>

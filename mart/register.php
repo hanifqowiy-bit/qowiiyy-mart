@@ -118,6 +118,9 @@ a{
 
 <p>Sudah punya akun? silahkan <a href="index.php">Login</a></p>
 
+<!-- TAMBAHAN TANPA MERUBAH APAPUN -->
+<p>atau masuk, <a href="home.php" style="color:#1e9be2;">TANPA AKUN</a></p>
+
 </div>
 
 </body>
